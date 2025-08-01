@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_tkom/pages/login_page.dart';
+import 'package:flutter_project_tkom/pages/register_page.dart';
 import 'package:flutter_project_tkom/pages/splash_screen_page.dart';
 
 void main() {
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const SplashScreenPage(),
+      home: const LoginPage(),
     );
   }
 }
