@@ -68,7 +68,7 @@ class _DhtPageState extends State<DhtPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Monitoring", style: TextStyle(color: Colors.white)),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.green,
         elevation: 0,
       ),
       body: Container(
@@ -76,7 +76,7 @@ class _DhtPageState extends State<DhtPage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.black, Color(0xFF220033)],
+            colors: [Colors.green, Color(0xFF220033)],
           ),
         ),
         child: Center(

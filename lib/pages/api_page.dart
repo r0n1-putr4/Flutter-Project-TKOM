@@ -68,6 +68,11 @@ class _ApiPageState extends State<ApiPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Monitoring", style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.green,
+        elevation: 0,
+      ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -78,10 +83,8 @@ class _ApiPageState extends State<ApiPage> {
             colors: [Colors.green, Color(0xFF220033)],
           ),
         ),
-        child: SingleChildScrollView(
-          child: Center(
-            child: Image.asset(gambar),
-          ),
+        child: Center(
+          child: Expanded(child: Image.asset(gambar)),
         ),
       ),
     );

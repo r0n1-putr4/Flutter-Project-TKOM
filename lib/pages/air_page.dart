@@ -68,6 +68,11 @@ class _AirPageState extends State<AirPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Monitoring", style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.green,
+        elevation: 0,
+      ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -79,7 +84,7 @@ class _AirPageState extends State<AirPage> {
           ),
         ),
         child: Center(
-          child: Image.asset(gambar),
+          child: Expanded(child: Image.asset(gambar)),
         ),
       ),
     );
