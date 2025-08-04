@@ -17,8 +17,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.green),
       drawer: Drawer(
-        // backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
         child: ListView(
+          padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
               accountName: Text("Roni Putra"),
