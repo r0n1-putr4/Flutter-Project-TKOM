@@ -24,7 +24,7 @@ class _DhtPageState extends State<DhtPage> {
   Future<void> _fetchData() async {
     try {
       final response = await http.get(
-        Uri.parse('${ApiConfig.baseUrl}/nodeMcu/getDHT.php'),
+        Uri.parse('${ApiConfig.baseUrl}/nodeMcu/getSensor.php'),
       );
       if (response.statusCode == 200) {
         final json = jsonDecode(response.body);
@@ -50,9 +50,7 @@ class _DhtPageState extends State<DhtPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-
     _fetchData(); // fetch initially
-
     _timer = Timer.periodic(Duration(seconds: 5), (Timer t) {
       _fetchData(); // fetch every 5 seconds
     });

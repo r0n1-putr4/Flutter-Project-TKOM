@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_tkom/pages/login_page.dart';
 import 'package:flutter_project_tkom/pages/register_page.dart';
 
 class SplashScreenPage extends StatefulWidget {
@@ -13,7 +14,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     Future.delayed(Duration(seconds: 2), () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (_) => const RegisterPage()),
+        MaterialPageRoute(builder: (_) => const LoginPage()),
       );
     });
   }
@@ -36,9 +37,9 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
             colors: [Colors.green, Color(0xFF220033)],
           ),
         ),
-        child: Center(
-          child: SingleChildScrollView(
-            child: Column(children: [Image.asset("assets/img/img_splash.png")]),
+        child: SingleChildScrollView(
+          child:Center(
+            child: Column(children: [Image.asset("assets/img/img_background.png")]),
           ),
         ),
       ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_tkom/pages/api_page.dart';
+import 'package:flutter_project_tkom/pages/dht_page.dart';
 import 'package:flutter_project_tkom/pages/home_page.dart';
 import 'package:flutter_project_tkom/pages/login_page.dart';
 import 'package:flutter_project_tkom/pages/register_page.dart';
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const HomePage(),
+      home: const ApiPage(),
     );
   }
 }
