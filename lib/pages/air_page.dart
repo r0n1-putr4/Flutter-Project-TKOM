@@ -6,18 +6,18 @@ import 'dart:convert';
 
 import '../utils/base_url.dart';
 
-class ApiPage extends StatefulWidget {
-  const ApiPage({super.key});
+
+class AirPage extends StatefulWidget {
+  const AirPage({super.key});
 
   @override
-  State<ApiPage> createState() => _ApiPageState();
+  State<AirPage> createState() => _AirPageState();
 }
 
-class _ApiPageState extends State<ApiPage> {
-
+class _AirPageState extends State<AirPage> {
   late Timer _timer;
   String _data = 'Loading...';
-  int sensorApi = 1;//kondisi tidak terdeteksi api
+  int sensorAir = 1;//kondisi tidak terdeteksi air
   String gambar = "";
 
   Future<void> _fetchData() async {
@@ -29,11 +29,11 @@ class _ApiPageState extends State<ApiPage> {
         final json = jsonDecode(response.body);
         setState(() {
           _data = json.toString();
-          sensorApi = json['sensorApi'];
-          if(sensorApi==1){
-            gambar = "assets/img/img_tidak_ada_api.png";
+          sensorAir = json['sensorAir'];
+          if(sensorAir==1){
+            gambar = "assets/img/img_tidak_terdeteksi_air.png";
           }else{
-            gambar = "assets/img/img_detect_api.png";
+            gambar = "assets/img/img_terdeteksi_air.png";
           }
         });
       } else {
@@ -78,10 +78,8 @@ class _ApiPageState extends State<ApiPage> {
             colors: [Colors.green, Color(0xFF220033)],
           ),
         ),
-        child: SingleChildScrollView(
-          child: Center(
-            child: Image.asset(gambar),
-          ),
+        child: Center(
+          child: Image.asset(gambar),
         ),
       ),
     );
