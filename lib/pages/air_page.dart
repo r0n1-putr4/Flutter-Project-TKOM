@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
 import '../utils/base_url.dart';
-
 
 class AirPage extends StatefulWidget {
   const AirPage({super.key});
@@ -17,8 +17,9 @@ class AirPage extends StatefulWidget {
 class _AirPageState extends State<AirPage> {
   late Timer _timer;
   String _data = 'Loading...';
-  int sensorAir = 1;//kondisi tidak terdeteksi air
+  int sensorAir = 1; //kondisi tidak terdeteksi air
   String gambar = "";
+  int koneksi = 0;
 
   Future<void> _fetchData() async {
     try {
@@ -30,9 +31,9 @@ class _AirPageState extends State<AirPage> {
         setState(() {
           _data = json.toString();
           sensorAir = json['sensorAir'];
-          if(sensorAir==1){
+          if (sensorAir == 1) {
             gambar = "assets/img/img_tidak_terdeteksi_air.png";
-          }else{
+          } else {
             gambar = "assets/img/img_terdeteksi_air.png";
           }
         });
@@ -47,16 +48,36 @@ class _AirPageState extends State<AirPage> {
       });
     }
   }
+  Future<void> _cekKoneksi() async {
+    var connectivityResult = await Connectivity().checkConnectivity();
+    if (connectivityResult == ConnectivityResult.none) {
+      setState(() {
+        koneksi = 0;
+      });
+
+      print("Jaringan Terputus");
+    } else {
+      setState(() {
+        koneksi = 1;
+      });
+
+      print("Terhubung Ke Jaringan");
+    }
+  }
+
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _fetchData(); // fetch initially
+    _cekKoneksi();
+    _fetchData(); //
+     // etch initially
     _timer = Timer.periodic(Duration(seconds: 5), (Timer t) {
       _fetchData(); // fetch every 5 seconds
     });
   }
+
 
   @override
   void dispose() {
@@ -84,7 +105,13 @@ class _AirPageState extends State<AirPage> {
           ),
         ),
         child: Center(
-          child: Expanded(child: Image.asset(gambar)),
+          child:
+              koneksi == 0
+                  ? Text(
+                    "Koneksi Terputus",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  )
+                  : Expanded(child: Image.asset(gambar)),
         ),
       ),
     );
