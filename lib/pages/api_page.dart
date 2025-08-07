@@ -85,6 +85,9 @@ class _ApiPageState extends State<ApiPage> {
         title: const Text("Monitoring", style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.green,
         elevation: 0,
+        iconTheme: const IconThemeData(
+          color: Colors.white, //
+        ),
       ),
       body: Container(
         width: double.infinity,

@@ -73,7 +73,6 @@ class _LampuPageState extends State<LampuPage> {
     }
   }
 
-
   @override
   void initState() {
     // TODO: implement initState
@@ -85,12 +84,12 @@ class _LampuPageState extends State<LampuPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Kontrol Lampu",
-          style: TextStyle(color: Colors.white),
-        ),
+        title: Text("Kontrol Lampu", style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.green,
         elevation: 0,
+        iconTheme: const IconThemeData(
+          color: Colors.white, //
+        ),
       ),
       body: Container(
         width: double.infinity,
@@ -114,7 +113,7 @@ class _LampuPageState extends State<LampuPage> {
             RawMaterialButton(
               onPressed: () {
                 setState(() {
-                  _setAktifLampu(_status == 1 ? "0":"1");
+                  _setAktifLampu(_status == 1 ? "0" : "1");
                 });
               },
               shape: const CircleBorder(),

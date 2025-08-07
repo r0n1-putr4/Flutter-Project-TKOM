@@ -16,7 +16,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.green),
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        iconTheme: const IconThemeData(color: Colors.white),
+      ),
       drawer: Drawer(
         backgroundColor: Colors.white,
         child: ListView(
@@ -68,7 +71,6 @@ class _HomePageState extends State<HomePage> {
                 );
               },
             ),
-
           ],
         ),
       ),

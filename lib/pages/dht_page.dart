@@ -84,6 +84,9 @@ class _DhtPageState extends State<DhtPage> {
         title: const Text("Monitoring", style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.green,
         elevation: 0,
+        iconTheme: const IconThemeData(
+          color: Colors.white, //
+        ),
       ),
       body: Container(
         decoration: const BoxDecoration(
