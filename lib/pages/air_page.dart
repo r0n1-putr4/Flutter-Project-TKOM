@@ -73,7 +73,7 @@ class _AirPageState extends State<AirPage> {
     _cekKoneksi();
     _fetchData(); //
      // etch initially
-    _timer = Timer.periodic(Duration(seconds: 5), (Timer t) {
+    _timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
       _fetchData(); // fetch every 5 seconds
     });
   }

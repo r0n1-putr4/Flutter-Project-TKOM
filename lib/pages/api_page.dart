@@ -66,7 +66,7 @@ class _ApiPageState extends State<ApiPage> {
     super.initState();
     _cekKoneksi();
     _fetchData(); // fetch initially
-    _timer = Timer.periodic(Duration(seconds: 5), (Timer t) {
+    _timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
       _fetchData(); // fetch every 5 seconds
     });
   }

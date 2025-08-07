@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project_tkom/pages/air_page.dart';
 import 'package:flutter_project_tkom/pages/api_page.dart';
 import 'package:flutter_project_tkom/pages/dht_page.dart';
+import 'package:flutter_project_tkom/pages/lampu_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AirPage()),
+                  MaterialPageRoute(builder: (context) => LampuPage()),
                 );
               },
             ),
