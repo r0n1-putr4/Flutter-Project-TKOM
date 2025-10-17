@@ -30,6 +30,8 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: double.infinity,
+        height: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -37,10 +39,8 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
             colors: [Colors.green, Color(0xFF220033)],
           ),
         ),
-        child: SingleChildScrollView(
-          child:Center(
-            child: Column(children: [Image.asset("assets/img/img_background.png")]),
-          ),
+        child: Center(
+          child: Expanded(child: Image.asset("assets/img/img_bg_tiga.png")),
         ),
       ),
     );

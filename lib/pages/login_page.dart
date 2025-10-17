@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project_tkom/pages/home_page.dart';
 import 'package:flutter_project_tkom/pages/register_page.dart';
 
 import '../utils/costume_button.dart';
@@ -75,7 +76,12 @@ class _LoginPageState extends State<LoginPage> {
                               onPressed: () {
                                 setState(() {
                                   if (_formKey.currentState!.validate()) {
-                                    //  _login();
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => HomePage(),
+                                      ),
+                                    );
                                   }
                                 });
                               },

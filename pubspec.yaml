@@ -37,10 +37,10 @@ dependencies:
   http: ^1.3.0
   google_fonts: ^6.2.0
   flutter_advanced_drawer: ^1.4.0
-  syncfusion_flutter_gauges: ^24.2.6
+  syncfusion_flutter_gauges: ^31.1.19
   awesome_dialog: ^3.2.1
   logger: ^2.5.0
-  connectivity_plus: ^5.0.1
+  connectivity_plus: ^7.0.0
 
 dev_dependencies:
   flutter_test:

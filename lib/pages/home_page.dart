@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         child: Center(
-          child: Expanded(child: Image.asset("assets/img/img_back_dua.png")),
+          child: Expanded(child: Image.asset("assets/img/img_bg_tiga.png")),
         ),
       ),
     );
